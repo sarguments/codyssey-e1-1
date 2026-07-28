@@ -9,15 +9,12 @@
 
 ## 실행 환경
 
-실습을 시작할 때 실제 명령 출력으로 아래 항목을 채웁니다.
-
 | 항목 | 값 | 확인 명령 |
 |---|---|---|
-| OS | TODO | `sw_vers` 또는 `cat /etc/os-release` |
-| Shell | TODO | `echo $SHELL` |
-| Git | TODO | `git --version` |
-| Docker | TODO | `docker --version` |
-| Docker 엔진 | TODO | `docker info` |
+| OS | macOS 15.7.4 | `sw_vers` |
+| Shell | zsh | `echo $SHELL` |
+| Git | 2.53.0 | `git --version` |
+| Docker | 28.5.2 | `docker --version` |
 
 ## 수행 체크리스트
 
@@ -45,20 +42,8 @@ codyssey/
 │   ├── docker-log.md       # Docker 실습 기록
 │   └── troubleshooting.md  # 문제 해결 기록
 ├── evidence/
-│   └── README.md           # 캡처 파일 관리 규칙
-└── local/                  # 개인 메모(버전 관리 제외)
+    └── README.md           # 캡처 파일 관리 규칙
 ```
-
-## 시작 순서
-
-전체 진행 순서와 단계별 기록 기준은 [`docs/progress-guide.md`](docs/progress-guide.md)를 참고합니다.
-
-1. 위 실행 환경 표를 실제 출력으로 채웁니다.
-2. [`docs/terminal-log.md`](docs/terminal-log.md)에 터미널과 권한 실습을 기록합니다.
-3. [`docs/docker-log.md`](docs/docker-log.md)에 Docker 점검부터 순서대로 기록합니다.
-4. 웹 서버 소스와 Dockerfile은 직접 작성합니다.
-5. 문제와 해결 과정은 [`docs/troubleshooting.md`](docs/troubleshooting.md)에 누적합니다.
-6. 캡처는 [`evidence/`](evidence/)에 저장하고 관련 문서에서 상대 경로로 연결합니다.
 
 ## 보안 원칙
 
