@@ -1,38 +1,150 @@
 # Docker 실습 로그
 
-## 설치 및 엔진 점검
+## Docker 설치 및 기본 점검
+
+- 요구사항
+    - Docker 버전 확인 결과를 기록한다. (docker --version)
+    - Docker 데몬 동작 여부 확인 결과를 기록한다. (docker info 또는 동등 점검)
+
+- 실행 명령:
 
 ```bash
-# TODO: docker --version, docker info 결과 기록
+# TODO: docker --version, docker info 명령 기록
 ```
 
-## 기본 컨테이너 실습
+- 실제 출력:
+
+```text
+TODO
+```
+
+- 확인 결과: TODO
+- 증거(필요 시): TODO
+
+## Docker 기본 운영 명령 수행
+
+- 요구사항
+    - 이미지: 다운로드/목록 확인 (예: docker images)
+    - 컨테이너: 실행/중지/목록 확인 (예: docker ps, docker ps -a)
+    - 운영: 로그 확인 (예: docker logs), 리소스 확인 (예: docker stats)
+
+- 실행 명령:
 
 ```bash
-# TODO: hello-world와 Ubuntu 컨테이너 실습 기록
+# TODO: docker images, docker ps -a, docker logs, docker stats 명령 기록
 ```
 
-## 커스텀 이미지와 포트 매핑
+- 실제 출력:
 
-- 선택한 베이스 이미지: TODO
-- 커스텀 포인트와 목적: TODO
-- 빌드 명령 및 결과: TODO
-- 실행 명령 및 결과: TODO
-- 접속 증거: TODO
+```text
+TODO
+```
 
-## 바인드 마운트
+- 확인 결과: TODO
+- 증거(필요 시): TODO
 
-- 실행 명령: TODO
+## 컨테이너 실행 실습
+
+- 요구사항
+    - hello-world 실행 성공을 기록한다.
+    - ubuntu 컨테이너를 실행하고 내부 진입 후 간단 명령(예: ls, echo) 수행 결과를 기록한다.
+    - 컨테이너 종료/유지(attach/exec 등)의 차이를 스스로 관찰하고 간단히 정리한다.
+
+- 실행 명령:
+
+```bash
+# TODO: hello-world와 Ubuntu 컨테이너 실행 명령 기록
+```
+
+- 실제 출력:
+
+```text
+TODO
+```
+
+- 확인 결과: TODO
+- 증거(필요 시): TODO
+
+## 기존 Dockerfile 기반 커스텀 이미지 제작
+
+- 요구사항 (원문 참고 필요)
+    - 커스텀 이미지 빌드 성공 및 컨테이너 실행 성공
+
+- 베이스 이미지와 선택 이유: TODO
+- 커스텀 내용과 목적: TODO
+- 실행 명령:
+
+```bash
+# TODO: 이미지 빌드 명령 기록
+```
+
+- 실제 출력:
+
+```text
+TODO
+```
+
+- 확인 결과: TODO
+- 스크린샷: TODO
+
+## 포트 매핑 및 접속 증거
+
+- 요구사항
+    - 브라우저 접속 화면(또는 curl 응답)을 기술 문서에 첨부한다.
+
+- 실행 명령:
+
+```bash
+# TODO: 포트 매핑을 포함한 컨테이너 실행 및 응답 확인 명령 기록
+```
+
+- 실제 출력:
+
+```text
+TODO
+```
+
+- 확인 결과: TODO
+- 포트 매핑 설명: TODO
+- 증거: TODO
+
+## 바인드 마운트 반영 검증
+- 요구사항
+    - 실행 명령 + 호스트 변경 전/후 비교
+
+- 실행 명령:
+
+```bash
+# TODO: 바인드 마운트를 포함한 컨테이너 실행 명령 기록
+```
+
+- 실제 출력:
+
+```text
+TODO
+```
+
 - 변경 전후 비교: TODO
+- 확인 결과: TODO
 
-## 볼륨 영속성
+## Docker 볼륨 영속성 검증
 
-- 볼륨 생성: TODO
-- 컨테이너 삭제 전 확인: TODO
-- 컨테이너 삭제 후 확인: TODO
+- 요구사항
+    - Docker 볼륨을 생성하고 컨테이너에 연결한다.
+    - 컨테이너 삭제 전/후로 데이터를 확인하여 데이터가 유지됨을 증명한다.
+    - 기술 문서에 생성/연결/검증 절차(명령+출력)를 포함한다.
 
-## 운영 명령
+- 실행 명령:
 
 ```bash
-# TODO: images, ps -a, logs, stats 결과 기록
+# TODO: 볼륨 생성, 데이터 작성, 컨테이너 삭제 및 재연결 명령 기록
 ```
+
+- 실제 출력:
+
+```text
+TODO
+```
+
+- 확인 결과: TODO
+- 볼륨 영속성 설명: TODO
