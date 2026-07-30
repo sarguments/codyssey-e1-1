@@ -31,12 +31,12 @@ origin  https://github.com/sarguments/codyssey-e1-1.git (fetch)
 origin  https://github.com/sarguments/codyssey-e1-1.git (push)
 ```
 
-### 확인 기준
+### 결과
 
-- `git config --list`에 사용자 정보와 `init.defaultBranch=main` 설정이 표시되는지 확인한다.
-- `git remote -v`에 GitHub 원격 저장소 주소가 표시되는지 확인한다.
+- `git config --list`에서 사용자 정보와 기본 브랜치가 `main`으로 설정된 것을 확인했다.
+- `git remote -v`에 GitHub 저장소 주소가 표시됐다.
 
-### 설명
+### Git과 GitHub
 
 - Git은 로컬에서 변경 이력을 기록하고 관리하는 버전 관리 도구다.
 - GitHub는 Git 저장소를 원격으로 공유하고 협업 기능을 제공하는 플랫폼이다.
