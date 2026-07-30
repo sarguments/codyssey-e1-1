@@ -141,7 +141,7 @@ nginx        alpine    f0ba77f796e5   13 days ago   62.4MB
 #### 확인 내용
 
 - `docker pull nginx:alpine`이 `Status: Downloaded newer image for nginx:alpine`으로 완료됐다.
-- `docker images nginx:alpine` 목록에 `nginx:alpine` 이미지가 표시됐다.
+- `docker images nginx:alpine` 으로 목록에 `nginx:alpine` 이미지가 표시됐다.
 
 #### 이미지 이름 설명
 
@@ -280,17 +280,17 @@ exit
 #### 실행 기록
 
 ```console
-sarguments7021@c6r3s3 practice % docker run -dit --name e1-attach-test ubuntu bash -i
-b6159afe02c84407c1b6659d2b8ffa3e10de1cde7ab1e0491edd6c1e9e501452
+sarguments7021@c6r3s3 practice % docker run -dit --name e1-attach-test ubuntu bash
+798b52509884de7afe0a22fd6af8053ca4a22d870cbdede7f75464179ba3998a
 
 sarguments7021@c6r3s3 practice % docker attach e1-attach-test
 
-root@b6159afe02c8:/# exit
+root@798b52509884:/# exit
 exit
 
 sarguments7021@c6r3s3 practice % docker ps -a --filter name=e1-attach-test
-CONTAINER ID   IMAGE     COMMAND     CREATED         STATUS                      PORTS     NAMES
-b6159afe02c8   ubuntu    "bash -i"   6 minutes ago   Exited (0) 22 seconds ago             e1-attach-test
+CONTAINER ID   IMAGE     COMMAND   CREATED         STATUS                      PORTS     NAMES
+798b52509884   ubuntu    "bash"    2 minutes ago   Exited (0) 15 seconds ago             e1-attach-test
 
 sarguments7021@c6r3s3 practice % docker run -dit --name e1-exec-test ubuntu sleep infinity
 76733b2a5c03e119d597c65b8d7a7287fd40c604e8a8a4dab9c24ee39c80266f
@@ -313,13 +313,7 @@ CONTAINER ID   IMAGE     COMMAND            CREATED              STATUS         
   - `-t`: 가상 터미널을 할당한다.
 - `--name e1-attach-test`: 컨테이너 이름을 지정한다.
 - `ubuntu`: 실행할 이미지다.
-- `bash -i`: 컨테이너 안에서 Bash를 실행하고, Bash의 `-i`로 대화형 셸로 실행한다.
-
-#### `-i`가 두 번 있는 이유
-
-- `-dit` 안의 `-i`는 Docker 옵션이다. Docker가 컨테이너 표준 입력을 열어 두므로 `docker attach` 후 입력을 전달할 수 있다.
-- `bash -i`의 `-i`는 Bash 옵션이다. Bash가 프롬프트를 띄우고 입력을 받는 대화형 셸로 동작하게 한다.
-- 같은 글자지만 Docker와 Bash가 각각 해석하므로 중복 옵션이 아니다. 이 실습에서는 Docker의 입출력 연결과 컨테이너 안 Bash의 대화형 동작을 모두 필요로 한다.
+- `bash`: 컨테이너 안에서 Bash를 주 프로세스로 실행한다.
 
 #### 확인 내용
 
@@ -550,7 +544,7 @@ volume-data
 
 ### 명령 구성
 
-- `docker exec`는 실행 중인 컨테이너 안에서 명령을 실행한다.
+- `docker exec`는 실행 중인 컨테이너 안에서 명령을 실행한다.                            
 - `bash`는 컨테이너 안에서 실행할 셸이다.
 - `-c`는 뒤의 따옴표로 묶인 문자열을 Bash 명령으로 실행하는 옵션이다.
 

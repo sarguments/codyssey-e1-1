@@ -76,7 +76,7 @@
 - 확인 명령: `docker run hello-world`, Ubuntu 컨테이너 실행, 내부 `ls`·`echo`, `attach` 또는 `exec`
 - 확인 기준: `hello-world` 성공 메시지, Ubuntu 내부의 `ls`·`echo` 출력, `attach`·`exec` 사용 뒤 컨테이너 상태를 확인한다.
 - 설명: `attach`는 컨테이너의 주 프로세스 입출력에 연결하고, `exec`는 실행 중인 컨테이너 안에서 별도 프로세스를 실행한다. 실제 셸 또는 프로세스를 종료한 뒤의 상태 차이는 실행 결과로 기록한다.
-- 명령 설명: `docker run -dit ... ubuntu bash -i`에서 `-dit`는 Docker의 백그라운드·표준 입력·가상 터미널 옵션이고, 마지막 `bash -i`는 Bash를 대화형으로 실행하는 별도 옵션이다.
+- 명령 설명: `docker run -dit ... ubuntu bash`에서 `-dit`는 Docker의 백그라운드·표준 입력·가상 터미널 옵션이다. 이미지 뒤의 `bash`는 컨테이너의 주 프로세스로 실행되며, `-it`가 터미널 환경을 제공하므로 Bash의 별도 `-i` 옵션은 필요하지 않다.
 - 기록 위치: [컨테이너 실행 로그](docs/docker-log.md#컨테이너-실행-실습)
 
 ### Dockerfile 기반 커스텀 이미지
