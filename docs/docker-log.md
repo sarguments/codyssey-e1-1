@@ -402,7 +402,7 @@ Accept-Ranges: bytes
 ```console
 sarguments7021@c6r3s3 codyssey-e1-1 % mkdir -p practice/bind-mount
 sarguments7021@c6r3s3 codyssey-e1-1 % printf '<h1>before</h1>\n' > practice/bind-mount/index.html
-sarguments7021@c6r3s3 codyssey-e1-1 % docker run -d --name e1-web-bind -p 8081:80 -v "$PWD/practice/bind-mount:/usr/share/nginx/html:ro" nginx:alpine
+sarguments7021@c6r3s3 codyssey-e1-1 % docker run -d --name e1-web-bind -p 8081:80 -v "$PWD/practice/bind-mount:/usr/share/nginx/html" nginx:alpine
 1f2dd46198de2893d4a8819fa49833868437ffd72c056efd38fed345560d35af
 
 sarguments7021@c6r3s3 codyssey-e1-1 % curl -s http://localhost:8081/
@@ -417,7 +417,7 @@ sarguments7021@c6r3s3 codyssey-e1-1 % curl -s http://localhost:8081
 
 - 호스트의 `index.html`을 수정하자 응답이 `<h1>before</h1>`에서 `<h1>afteer</h1>`로 바뀌었다.
 - 컨테이너를 다시 만들지 않아도 변경 내용이 바로 반영됐다.
-- `-v "$PWD/practice/bind-mount:/usr/share/nginx/html:ro"`는 호스트 경로를 컨테이너에 읽기 전용으로 연결한 바인드 마운트다.
+- `-v "$PWD/practice/bind-mount:/usr/share/nginx/html"`는 호스트 경로를 컨테이너에 연결한 바인드 마운트다.
 
 ## Docker 볼륨 영속성
 

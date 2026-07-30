@@ -26,7 +26,7 @@ sarguments7021@c6r3s3 codyssey-e1-1 % cd practice/terminal
 sarguments7021@c6r3s3 terminal % pwd
 /Users/sarguments7021/codyssey-e1-1/practice/terminal
 
-sarguments7021@c6r3s3 terminal % mkdir -p workspace
+sarguments7021@c6r3s3 terminal % mkdir workspace
 sarguments7021@c6r3s3 terminal % ls -al workspace
 total 0
 drwxr-xr-x  2 sarguments7021  sarguments7021   64 Jul 29 16:57 .
@@ -66,7 +66,6 @@ drwxr-xr-x  4 sarguments7021  sarguments7021  128 Jul 29 16:57 ..
 #### 결과
 
 - `pwd`로 저장소 루트와 `practice/terminal`로 이동한 뒤의 위치를 확인했다.
-- `ls -al`에서 `.git`, `.gitignore` 등 숨김 항목까지 확인했다.
 - `original.txt`를 생성한 뒤 복사, 이름 변경, 삭제한 결과가 각 목록에 반영됐다.
 
 #### `ls` 명령어
@@ -130,7 +129,7 @@ sarguments7021@c6r3s3 permissions % ls -l permissions-file.txt
 
 ```console
 sarguments7021@c6r3s3 codyssey-e1-1 % cd practice/permissions
-sarguments7021@c6r3s3 permissions % mkdir -p permissions-dir
+sarguments7021@c6r3s3 permissions % mkdir permissions-dir
 sarguments7021@c6r3s3 permissions % chmod 700 permissions-dir
 sarguments7021@c6r3s3 permissions % ls -ld permissions-dir
 drwx------  2 sarguments7021  sarguments7021  64 Jul 29 17:05 permissions-dir

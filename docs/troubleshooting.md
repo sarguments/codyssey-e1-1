@@ -11,5 +11,5 @@
 
 - 문제: 바인드 마운트에도 `-v` 옵션을 사용해 Docker 볼륨이 생성되는 것인지 혼란스러웠다.
 - 원인 가설: `-v`가 `--volume`의 짧은 이름이지만, 바인드 마운트와 이름 있는 Docker 볼륨 모두에 사용하는 범용 마운트 옵션이기 때문이다.
-- 확인: `-v "$PWD/practice/bind-mount:/usr/share/nginx/html:ro"`의 왼쪽 값은 호스트 경로라 바인드 마운트이고, `-v e1-data:/data`의 왼쪽 값은 Docker가 관리하는 볼륨 이름이다.
+- 확인: `-v "$PWD/practice/bind-mount:/usr/share/nginx/html"`의 왼쪽 값은 호스트 경로라 바인드 마운트이고, `-v e1-data:/data`의 왼쪽 값은 Docker가 관리하는 볼륨 이름이다.
 - 해결/대안: 마운트 유형을 분명히 표시해야 할 때는 `--mount type=bind,...` 또는 `--mount type=volume,...` 문법을 사용한다.
