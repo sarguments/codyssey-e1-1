@@ -146,7 +146,7 @@ nginx        alpine    f0ba77f796e5   13 days ago   62.4MB
 #### 이미지 이름 설명
 
 - `nginx:alpine`에서 콜론 앞의 `nginx`는 이미지 이름이다. 레지스트리를 생략했으므로 Docker Hub의 공식 Nginx 이미지를 뜻하며, 실제 내려받기 출력에는 `docker.io/library/nginx:alpine`으로 표시된다.
-- 콜론 뒤의 `alpine`은 태그(tag)다. Alpine Linux 기반으로 만든 Nginx 이미지 변형을 선택한다.
+- 콜론 뒤의 `alpine`은 태그(tag)다. Alpine Linux 기반으로 만든 Nginx 이미지를 선택한다.
 - 태그를 생략하면 기본 태그인 `latest`를 사용한다. 같은 이미지라도 태그에 따라 기반 운영체제나 포함된 버전이 달라질 수 있다.
 
 ### 컨테이너와 운영
@@ -560,4 +560,4 @@ volume-data
 ### 설명
 
 - Docker 볼륨은 컨테이너 파일 시스템과 분리되어 관리된다. 같은 볼륨을 새 컨테이너에 연결하면 이전 컨테이너가 삭제된 뒤에도 데이터를 사용할 수 있다.
-- 바인드 마운트는 호스트 경로를 직접 사용하고, Docker 볼륨은 Docker가 관리하는 저장 공간을 사용한다.
+- 바인드 마운트는 호스트(도커를 실행 중인 컴퓨터) 경로를 직접 사용하고, Docker 볼륨은 Docker가 관리하는 저장 공간을 사용한다.
