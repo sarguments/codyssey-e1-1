@@ -1,0 +1,14 @@
+services:
+  web:
+    build:
+      context: ./src
+    environment:
+      APP_ENV: ${APP_ENV:-dev}
+    ports:
+      - "${HOST_PORT:-8080}:80"
+
+  probe:
+    image: busybox:1.36
+    depends_on:
+      - web
+    command: ["wget", "-qO-", "http://web/"]

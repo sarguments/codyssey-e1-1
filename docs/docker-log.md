@@ -295,7 +295,15 @@ CONTAINER ID   IMAGE     COMMAND            CREATED              STATUS         
 
 - `attach`로 연결한 Bash를 종료하자 `e1-attach-test`가 `Exited (0)` 상태가 됐다.
 - `exec`로 시작한 별도 Bash를 종료한 뒤에도 `e1-exec-test`는 `Up` 상태로 유지됐다.
-- `attach`는 기존 주 프로세스에 연결하고, `exec`는 실행 중인 컨테이너에서 새 프로세스를 실행한다. 따라서 `exec`로 실행한 Bash를 종료해도 `sleep infinity`는 계속 실행됐다.
+
+#### `attach`와 `exec`의 차이, 실행 기록으로 풀어 보기
+
+컨테이너는 보통 주 프로세스(PID 1)가 살아 있는 동안 `Up` 상태다.
+
+- `e1-attach-test`의 주 프로세스는 `bash`다. `docker attach`는 이 기존 Bash에 연결하므로, `exit`하면 주 프로세스가 끝나 컨테이너도 `Exited`가 된다.
+- `e1-exec-test`의 주 프로세스는 `sleep infinity`다. `docker exec -it ... bash`는 별도 Bash를 추가 실행하므로, `exit`해도 `sleep infinity`가 남아 컨테이너는 `Up` 상태를 유지한다.
+
+즉, `attach`는 기존 프로세스에 연결하고, `exec`는 실행 중인 컨테이너에 새 프로세스를 실행한다.
 
 ## Dockerfile 기반 커스텀 이미지
 
