@@ -76,6 +76,14 @@
 
 ## 트러블슈팅
 
+### 포트 충돌 진단: 포트 확인 → 프로세스 확인 → 포트 변경
+
+1. 포트 확인: `docker compose ps`와 `lsof -nP -iTCP:8080 -sTCP:LISTEN`
+2. 프로세스 확인: `ps -p 12345 -o pid,ppid,user,command` (`12345`는 확인한 PID로 교체)
+3. 내 컨테이너가 원인이면 `docker compose down`으로 중지하고, 다른 프로세스는 임의로 종료하지 않는다.
+4. 포트 변경: `.env`에 `HOST_PORT=8082`를 설정한다.
+5. `docker compose up -d` 후 `curl -i http://localhost:8082/`에서 `HTTP/1.1 200 OK`를 확인한다.
+
 - [같은 이름의 컨테이너를 다시 생성할 때 발생한 충돌](docs/troubleshooting.md#사례-1)
 - [바인드 마운트와 Docker 볼륨에서 사용하는 `-v` 옵션 구분](docs/troubleshooting.md#사례-2)
 
